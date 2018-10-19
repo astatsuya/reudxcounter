@@ -13,23 +13,41 @@ class ConnectedForm extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-        title: 'initial form title',
-        id: 0
+        title: '',
+        contents: '',
+        id: 0,
       }
       this.handleClick = this.handleClick.bind(this)
+      this.changeTitle = this.changeTitle.bind(this)
   }
 
 handleClick() {
   const { title } = this.state;
   this.props.addArticle({ title });
+  this.setState({
+    title: '',
+    contents: ''
+  })
 }
+
+changeTitle(e) {
+  this.setState({
+    title: e.target.value
+  });
+}
+
 
 render() {
     return (
       <div>
-        <button onClick={this.handleClick}>
-        dispatch
-        </button>
+          title: <input
+            type="text"
+            value={this.state.title}
+            onChange={this.changeTitle}
+          />
+          <button onClick={this.handleClick}>
+          dispatch
+          </button>
       </div>
       // <form onSubmit={this.props.addArticle} >
       //   <label>

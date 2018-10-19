@@ -1,7 +1,7 @@
 import { ADD_ARTICLE } from '../actions/index';
 
 const initialState = {
-  articles: [1,2]
+  articles: []
 };
 
 const rootReducer = (state = initialState, action) => {

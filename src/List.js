@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import store from './Redux/store';
+
 
 const mapStateToProps = state => {
   return {
@@ -8,10 +10,14 @@ const mapStateToProps = state => {
 };
 
 const ConnectedList = ({ articles }) => {
+  console.log(store.getState())
   return (
     <ul>
-      {articles.map(array =>
-        <li>{array.title}</li>
+      {articles.map((array, index) =>
+        <div key={index}>
+          <li >index{index}</li>
+          <li >title:{array.title}</li>
+        </div>
       )}
     </ul>
   );

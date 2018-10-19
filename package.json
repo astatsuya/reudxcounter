@@ -31,6 +31,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "eslint": "^5.7.0",
+    "uuid": "^3.3.2",
     "webpack": "4.19.1",
     "webpack-cli": "^3.1.2"
   }
