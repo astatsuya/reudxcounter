@@ -1,7 +1,9 @@
 import { ADD_ARTICLE } from '../actions/index';
+import { CREATE_NEW_ARTICLE } from '../actions/index';
 
 const initialState = {
-  articles: []
+  articles: [],
+  newArticle: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -14,6 +16,14 @@ const rootReducer = (state = initialState, action) => {
           action.payload
         ]
       };
+    case CREATE_NEW_ARTICLE:
+      return {
+        ...state,
+        newArticle: [
+          ...state.newArticle,
+          action.create
+        ]
+      }
     default:
       return state
   }
